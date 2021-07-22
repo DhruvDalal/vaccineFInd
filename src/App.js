@@ -59,6 +59,9 @@ function App() {
           onClick={() => {
             if (pincode.length === 0) {
               alert("Enter Pincode");
+            }
+            else if(pincode.length !== 6){
+              alert("Enter valid pincode")
             } else {
               fetchApi();
             }
