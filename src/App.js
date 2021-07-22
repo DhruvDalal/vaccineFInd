@@ -61,7 +61,7 @@ function App() {
               alert("Enter Pincode");
             }
             else if(pincode.length !== 6){
-              alert("Enter valid pincode")
+              alert("Enter valid pincode with 6 digits")
             } else {
               fetchApi();
             }
