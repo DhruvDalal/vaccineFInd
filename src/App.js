@@ -38,16 +38,20 @@ function App() {
       <div className="row">
         <input
           placeholder="Enter PINCODE"
-          onKeyUp={(event)=>{
-            if (event.key === 'Enter') {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    fetchApi()
-    // Trigger the button element with a click
-    
-  }
-          }
-          }
+          onKeyUp={(event) => {
+            if (event.key === "Enter") {
+              // Cancel the default action, if needed
+              event.preventDefault();
+              if (pincode.length === 0) {
+              alert("Enter Pincode");
+            } else if (pincode.length !== 6) {
+              alert("Enter valid pincode with 6 digits");
+            } else {
+              fetchApi();
+            }
+              // Trigger the button element with a click
+            }
+          }}
           type="number"
           className="inp"
           onChange={cgInput}
@@ -69,9 +73,8 @@ function App() {
           onClick={() => {
             if (pincode.length === 0) {
               alert("Enter Pincode");
-            }
-            else if(pincode.length !== 6){
-              alert("Enter valid pincode with 6 digits")
+            } else if (pincode.length !== 6) {
+              alert("Enter valid pincode with 6 digits");
             } else {
               fetchApi();
             }
