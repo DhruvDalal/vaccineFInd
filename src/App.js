@@ -38,7 +38,7 @@ function App() {
       <div className="row">
         <input
           placeholder="Enter PINCODE"
-          type="text"
+          type="number"
           className="inp"
           onChange={cgInput}
           value={pincode}
