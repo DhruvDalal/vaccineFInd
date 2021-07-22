@@ -38,6 +38,16 @@ function App() {
       <div className="row">
         <input
           placeholder="Enter PINCODE"
+          onKeyUp={(event)=>{
+            if (event.key === 'Enter') {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    fetchApi()
+    // Trigger the button element with a click
+    
+  }
+          }
+          }
           type="number"
           className="inp"
           onChange={cgInput}
